@@ -1,5 +1,11 @@
 def pair_sum(arr, target):
-    return []
+    check = {}
+    for i, nomor in enumerate(arr):
+        add = target - nomor
+        if add in check:
+            return [check[add], i]
+        check[nomor] = i
+    return None
 
 if __name__ == '__main__':
     print(pair_sum([1, 2, 3, 4, 6], 6)) # [1, 3]
